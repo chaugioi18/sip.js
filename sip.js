@@ -364,6 +364,7 @@ function stringify(m) {
   m.headers['content-length'] = (m.content || '').length;
 
   for(var n in m.headers) {
+    console.log(`N in header ${n}`)
     if(typeof m.headers[n] !== "undefined") {
       if(typeof m.headers[n] === 'string' || !stringifiers[n])
         s += prettifyHeaderName(n) + ': ' + m.headers[n] + '\r\n';
